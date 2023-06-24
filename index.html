@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Coming soon</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-			html {
-				background-color: black;
-				color: white;
-			}
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-		</style>
-	</head>
-	<body>
-		<h1 style="text-align: center; font-weight: 100;">A new age of Showtape Selection is beginning soon.  Stay tuned.</h1>
+<head>
+	<title>Coming soon</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="navbar"></div>
 
-	</body>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function () {
+			// Load the navbar
+			$('#navbar').load('navbar.html');
+		});
+	</script>
+
+</body>
 </html>
