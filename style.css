@@ -1,13 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
 
+@media screen and (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+}
+
 html
 {
-    margin: 0;
-    padding: 0px;
 }
 body {
     font-family: 'Readex Pro', sans-serif;
     background: #f1f1f1;
+    margin-top: 0;
+    margin: 0;
+    padding: 0px;
 }
 
 /* Header/Blog Title */
@@ -98,3 +110,65 @@ body {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+
+/* Style the top navigation bar */
+.minitopnav {
+    overflow: hidden;
+    background-color: #664891;
+}
+
+    /* Style the topnav links */
+    .minitopnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 5px 25px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+
+        /* Change color on hover */
+        .minitopnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: -5px;
+    }
+
+    .hero p {
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+
+.btn {
+    display: inline-block;
+    background-color: #664891;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #523A74;
+    }

@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Coming soon</title>
+	<title>Chuck E Cheese</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 	<div id="navbar"></div>
 
-
+	<div id="cecnavbar"></div>
 
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(function () {
 			// Load the navbar
-			$('#navbar').load('https://cdn.jsdelivr.net/gh/realrandombeans/showtapeselection.github.io@16ccec93261565882f719ce73b70cebaf8f11f07/navbar.html');
+			$('#cecnavbar').load('/navbars/cecnav.html');
+		});
+	</script>
+	<script>
+		$(function () {
+			// Load the navbar
+			$('#navbar').load('/navbars/navbar.html');
 		});
 	</script>
 
-	<script src="firebase-init.js"></script>
+	<script src="/firebase-init.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Showtape Central</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<div id="navbar"></div>
+
+	<div id="scnav"></div>
+
+	<div id="container">
+		<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/scbanner.png')">
+			<h1>Animatronics Made Easy</h1>
+			<p>Discover a world of animatroni-mation</p>
+			<a href="https://gamejolt.com/games/showtapecentral/765719" class="btn">Download</a>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function () {
+			// Load the navbar
+			$('#scnav').load('/navbars/scnav.html');
+		});
+	</script>
+	<script>
+		$(function () {
+			// Load the navbar
+			$('#navbar').load('/navbars/navbar.html');
+		});
+	</script>
+
+	<script src="/firebase-init.js"></script>
+
+</body>
+</html>
