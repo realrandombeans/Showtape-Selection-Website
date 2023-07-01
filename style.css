@@ -172,3 +172,21 @@ body {
     .btn:hover {
         background-color: #523A74;
     }
+
+
+.alert {
+    padding: 10px;
+    background-color: #EE7D45;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 24px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
