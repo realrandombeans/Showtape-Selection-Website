@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Chuck E Cheese</title>
+	<title>Showtape Central</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="/style.css">
@@ -11,14 +11,107 @@
 
 	<div id="scnav"></div>
 
-	<div id="container">
-		<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/sc1.png'); height: 300px;">
-			<h1>Help & Support</h1>
-			<p>Help for all things Showtape Central</p>
+	<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/sc1.png'); height: 300px;">
+		<h1>Help & Support</h1>
+		<p>Help for all things Showtape Central</p>
+	</div>
+
+	<div class="container">
+		<div class="subheader">
+			<h1>General</h1>
+		</div>
+
+		<button class="accordion">How much does Showtape Central cost?</button>
+		<div class="panel">
+			<p>Showtape Central is completely free to play!</p>
+		</div>
+		<button class="accordion">How can I download Showtape Central?</button>
+		<div class="panel">
+			<p>Either you can hit the Download button on the home page, or search it up on Gamejolt.</p>
+		</div>
+		<button class="accordion">What are the requirements to play?</button>
+		<div class="panel">
+			<p>To play Showtape Central, you need to meet the following requirements:</p>
+			<ul>
+				<li>A computer running Windows 7 or above</li>
+				<li>An internet connection</li>
+			</ul>
+		</div>
+
+		<div class="subheader">
+			<h1>Accounts</h1>
+		</div>
+
+		<button class="accordion">Why do I need an account to sign up?</button>
+		<div class="panel">
+			<p>Having an account to play Showtape Central gives you access to all kinds of features. From leaderboards to account management, it allows us to add way more features to make your experience great!</p>
+		</div>
+		<button class="accordion">I cannot seem to sign in.</button>
+		<div class="panel">
+			<p>You may not be able to sign in for a variety of reasons. One of the main reasons is that you have forgotten your password. If you cannot remember your password, please launch up the game, press Reset Password, enter your email, and you should get an email to reset your password.</p>
+		</div>
+		<button class="accordion">I do not get an email when I sign up or reset my password.</button>
+		<div class="panel">
+			<p>There can be many reasons why you may not get an email. First, make sure your email is correct, if it is not, you will have to create a new account. If you are sure it is correct, then it may be a problem on our end. If so, please contact us at contact@showtapeselection.com!</p>
+		</div>
+		<button class="accordion">Can you see my passwords or my personal data?</button>
+		<div class="panel">
+			<p>Your passwords aren't accessible by us, nor is any personal data except your email. If you have any concerns about privacy, don't be afraid to contact us!</p>
+		</div>
+		<button class="accordion">How can I delete my account?</button>
+		<div class="panel">
+			<p>For account deletion requests, email us or DM one of the developers in the Discord server.</p>
+		</div>
+
+		<div class="subheader">
+			<h1>Developing</h1>
+		</div>
+
+		<button class="accordion">I want to help with development for Showtape Central!</button>
+		<div class="panel">
+			<p>Awesome! If you're a member of our discord, please DM randombeans! If you do not have access to Discord, please email us! However, <b>please take note that having Discord is recommended.</b></p>
+		</div>
+		<button class="accordion">How often do updates come out?</button>
+		<div class="panel">
+			<p>Whilst we can't give approximate dates, patches come out every week or so, and large updates containing lots of content will come every so often. <i>We can't develop that quickly, so be patient!</i></p>
+		</div>
+
+		<div class="subheader">
+			<h1>Making Content</h1>
+		</div>
+
+		<button class="accordion">Can I make videos on the game?</button>
+		<div class="panel">
+			<p>Yes! Don't be afraid to make videos on the game, we definitely love watching them!</p>
+		</div>
+		<button class="accordion">Am I allowed to review the game?</button>
+		<div class="panel">
+			<p>Go ahead! We love watching reviews and playthroughs of the game.</p>
+		</div>
+		<button class="accordion">Can I profit off of videos of the game?</button>
+		<div class="panel">
+			<p>Yes, as long as you aren't making money off of stolen content, that's fine!</p>
 		</div>
 	</div>
 
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.display === "block") {
+					panel.style.display = "none";
+				} else {
+					panel.style.display = "block";
+				}
+			});
+		}
+	</script>
 	<script>
 		$(function () {
 			// Load the navbar
