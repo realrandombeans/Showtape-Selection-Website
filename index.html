@@ -1,22 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Coming soon</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/style.css">
+    <title>Home - Showtape Selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Add any necessary styles for the slideshow container and images here */
+        .slideshow-container {
+            max-width: 1280px;
+            margin: auto;
+            position: relative;
+        }
+
+        .slideshow-image {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+            .slideshow-image.active {
+                opacity: 1;
+            }
+
+        .review {
+            max-width: 1280px;
+            margin: auto;
+            padding: 16px;
+            color: white;
+        }
+
+            .review::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            .review img {
+                float: left;
+                margin-right: 20px;
+                border-radius: 50%;
+            }
+
+            .review span {
+                font-size: 20px;
+                margin-right: 15px;
+            }
+
+            .segment {
+                margin-top: 450px;
+                position: relative;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .segment h1
+            {
+                margin: 5px;
+            }
+
+        @media (max-width: 1000px) {
+            .review {
+                text-align: center;
+            }
+
+                .review img {
+                    margin: auto;
+                    float: none;
+                    display: block;
+                }
+        }
+    </style>
 </head>
 <body>
-	<div id="navbar"></div>
+    <div id="navbar"></div>
 
+    <div class="slideshow-container">
+        <img class="slideshow-image fade" src="media/frames/one.png" alt="Image 1">
+        <img class="slideshow-image fade" src="media/frames/two.png" alt="Image 2">
+        <img class="slideshow-image fade" src="media/frames/three.png" alt="Image 3">
+    </div>
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-		$(function () {
-			// Load the navbar
+    <div class="segment">
+        <h1>We're one of the largest communities in the fandom!</h1>
+        <h1 style="font-size: 100px;">500+ MEMBERS</h1>
+        <h1>and still growing!</h1>
+    </div>
+
+    <div class="review" style="background-color: #EA545D;">
+        <img src="/media/profiles/randombeans.png" alt="Avatar" style="width:90px">
+        <p><span>randombeans</span>Director</p>
+        <p>"We're one of the most welcoming communities in the entire fandom! We don't permit any sensitive topics, and we've been regarded as the most safest community to be in!"</p>
+    </div>
+    <div class="review" style="background-color: #EE7D45;">
+        <img src="/media/profiles/eveningstar92.png" alt="Avatar" style="width:90px">
+        <p><span>EveningStar92</span>Head of Development / Artist</p>
+        <p>"Showtape Selection is the most friendliest community in the animatronic fandom, I've made some great friends on it and have had some amazing times, it's a lot of fun to be in!"</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            // Load the navbar
             $('#navbar').load('/navbars/navbar.html');
-		});
-	</script>
-	<script src="/firebase-init.js"></script>
+        });
+
+        // JavaScript for the slideshow
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slideshow-image");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Display the current slide
+            slides[slideIndex - 1].classList.add("active");
+
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+    <script src="/firebase-init.js"></script>
 </body>
 </html>
