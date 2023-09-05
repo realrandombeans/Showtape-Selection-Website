@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Characters - Chuck E Cheese</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/style.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			gap: 20px;
+			padding: 20px;
+		}
+
+		.imagecontainer {
+			position: relative;
+			width: 100%;
+			max-width: 300px;
+		}
+
+		.image {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.overlay {
+			position: absolute;
+			bottom: 0;
+			background: rgb(0, 0, 0);
+			background: rgba(0, 0, 0, 0.5);
+			color: #f1f1f1;
+			width: 100%;
+			transition: .5s ease;
+			opacity: 0;
+			color: white;
+			font-size: 20px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		.imagecontainer:hover .overlay {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id="navbar"></div>
+
+	<div id="cecnavbar"></div>
+
+	<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/backgrounds/cecbackground.png'); height: 300px;">
+		<h1>Characters</h1>
+		<p>Every character that exists in the Swift universe.</p>
+	</div>
+
+	<div class="container">
+		<div class="grid-container">
+			<div class="imagecontainer">
+				<a href="/swifts/characters/swift.html">
+					<!-- Replace with the actual link you want -->
+					<img src="/media/characters/swift.png" alt="Avatar" class="image">
+					<div class="overlay">Swift </div>
+				</a>
+			</div>
+			<div class="imagecontainer">
+				<a href="/swifts/characters/merlin.html">
+					<!-- Replace with the actual link you want -->
+					<img src="/media/characters/merlin.png" alt="Avatar" class="image">
+					<div class="overlay">Merlin Harringdon</div>
+				</a>
+			</div>
+			<div class="imagecontainer">
+				<a href="/swifts/characters/bruno.html">
+					<!-- Replace with the actual link you want -->
+					<img src="/media/characters/bruno.png" alt="Avatar" class="image">
+					<div class="overlay">Bruno Butterscotch</div>
+				</a>
+			</div>
+			<div class="imagecontainer">
+				<a href="/swifts/characters/redwood.html">
+					<!-- Replace with the actual link you want -->
+					<img src="/media/characters/redwood.png" alt="Avatar" class="image">
+					<div class="overlay">Redwood Thorne</div>
+				</a>
+			</div>
+			<div class="imagecontainer">
+				<a href="/swifts/characters/warwick.html">
+					<!-- Replace with the actual link you want -->
+					<img src="/media/characters/warwick.png" alt="Avatar" class="image">
+					<div class="overlay">James Warwick</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function () {
+			// Load the navbar
+            $('#cecnavbar').load('/navbars/snavbar.html');
+			$('#navbar').load('/navbars/navbar.html');
+		});
+	</script>
+
+	<script src="/firebase-init.js"></script>
+
+</body>
+</html>

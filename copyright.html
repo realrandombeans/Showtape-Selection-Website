@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home - Showtape Selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/sc1.png'); height: 300px;">
+        <h1>Copyright Information</h1>
+    </div>
+    <div class="container">
+        Copyright © 2023 Showtape Selection
+        <br />
+        All rights reserved.
+        <br />
+        Showtape Selection is an independent website dedicated to archiving data, information, and media related to Chuck E. Cheese and Showbiz Pizza. We are not affiliated with or endorsed by CEC Entertainment Inc. or Creative Engineering Inc. Chuck E. Cheese and Showbiz Pizza are registered trademarks of their respective owners.
+        <br />
+        Any references to Chuck E. Cheese, Showbiz Pizza, or associated trademarks are for informational and archival purposes only and do not imply any endorsement or sponsorship by the respective trademark owners.
+        <br />
+        For inquiries regarding the use or reproduction of content on this website, please contact us at contact@showtapeselection.com
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            // Load the navbar
+            $('#navbar').load('/navbars/navbar.html');
+        });
+    </script>
+    <script src="/firebase-init.js"></script>
+</body>
+</html>
