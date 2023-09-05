@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Art Competition - Showtape Selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/sc3.png'); height: 300px;">
+        <h1>Contact Us</h1>
+        <p>Got a question or need to talk?</p>
+    </div>
+
+    <h1 style="text-align: center">Contacting Showtape Selection</h1>
+    <div class="container">
+        <p>If you're interested in contacting us, don't be afraid to email us at the links below!</p>
+        <h4>Email: contact@showtapeselection.com</h4>
+        <h4>Discord: discord.gg/showtapeselection, also accessible via the button on the navigation bar</h4>
+    </div>
+    <h1 style="text-align: center">Questions</h1>
+    <div class="container">
+        <p>Before contacting us, please read the questions below and see if it answers what you are looking for.</p>
+        <button class="accordion">What is Showtape Selection?</button>
+        <div class="panel">
+            <p>We're an online community with over 500 members, and are quickly growing! We have been regarded as one of the most welcoming and friendliest communities in the fandom, with a zero tolerance on drama, and fantastic events! We are primarily situated on the Discord server, which is where most of the events and activities occur, however you can also find us on our Youtube channel too!</p>
+        </div>
+        <button class="accordion">What is Showtape Central?</button>
+        <div class="panel">
+            <p>Please see the Support page on the Showtape Central category in Games > Showtape Central</p>
+        </div>
+        <button class="accordion">Are there any jobs available?</button>
+        <div class="panel">
+            <p>All our staff are volunteers, and we are a non-profit community. If you wish to help with Showtape Central or Showtape Selection, please make sure you are in our discord first, and send a DM to an admin.</p>
+        </div>
+        <button class="accordion">How can I donate?</button>
+        <div class="panel">
+            <p>If you are interested in donating, please contact randombeans at contact@showtapeselection.com</p>
+        </div>
+        <button class="accordion">Can I work here?</button>
+        <div class="panel">
+            <p>All our staff are volunteers, and we are a non-profit community.</p>
+        </div>
+        <button class="accordion">I have not been credited for my work. How can this be resolved?</button>
+        <div class="panel">
+            <p>If you spot an issue relating to copyright, or are the copyright holder of a media and would like your work removed, please DM randombeans via Discord.</p>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+    <script>
+        $(function () {
+            // Load the navbar
+            $('#navbar').load('/navbars/navbar.html');
+        });
+    </script>
+    <script src="/firebase-init.js"></script>
+</body>
+</html>

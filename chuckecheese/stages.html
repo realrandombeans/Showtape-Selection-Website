@@ -10,12 +10,18 @@
 	<div id="navbar"></div>
 
 	<div id="cecnavbar"></div>
+
+	<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/backgrounds/cecbackground.png'); height: 300px;">
+		<h1>Stages</h1>
+		<p>All the information about the iconic stages used.</p>
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 		$(function () {
 			// Load the navbar
 			$('#navbar').load('/navbars/navbar.html');
-            $('#cecnavbar').load('/navbars/cecnav.html');
+			$('#cecnavbar').load('/navbars/cecnav.html');
 		});
 	</script>
 

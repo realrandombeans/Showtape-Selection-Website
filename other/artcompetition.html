@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Art Competition - Showtape Selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .imagecontainer {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgb(0, 0, 0);
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .imagecontainer:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/sc1.png'); height: 300px;">
+        <h1>Art Competition 2023</h1>
+        <p>Take a look at the submissions from the 2023 Swift Art Competition!</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/one.png" alt="Avatar" class="image">
+            <div class="overlay">cheezaroni</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/two.png" alt="Avatar" class="image">
+            <div class="overlay">The Nonfictional Explainer</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/three.png" alt="Avatar" class="image">
+            <div class="overlay">d1llp1ckle1</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/four.png" alt="Avatar" class="image">
+            <div class="overlay">OttoTheCartoonist</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/five.png" alt="Avatar" class="image">
+            <div class="overlay">crashBashed</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/six.png" alt="Avatar" class="image">
+            <div class="overlay">d1llp1ckle1</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/seven.png" alt="Avatar" class="image">
+            <div class="overlay">breadbeardareal</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/eight.png" alt="Avatar" class="image">
+            <div class="overlay">OldtimeGaming508</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/nine.png" alt="Avatar" class="image">
+            <div class="overlay">d1llp1ckle1</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/ten.png" alt="Avatar" class="image">
+            <div class="overlay">HoTdOgMaN101</div>
+        </div>
+        <div class="imagecontainer">
+            <img src="/media/artcompetition/eleven.png" alt="Avatar" class="image">
+            <div class="overlay">Abbyydrawss</div>
+        </div>
+        <!-- Add more containers here as needed -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            // Load the navbar
+            $('#navbar').load('/navbars/navbar.html');
+        });
+    </script>
+    <script src="/firebase-init.js"></script>
+</body>
+</html>

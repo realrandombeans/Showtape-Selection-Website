@@ -12,15 +12,16 @@ body {
     padding: 0px;
 }
 
-@media screen and (max-width: 1280px) {
-    .container {
-        width: 100%;
-    }
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 56px;
 }
 
 .container {
     width: 1280px;
     margin: auto;
+    padding: 25px;
 }
 
 /* Header/Blog Title */
@@ -228,4 +229,93 @@ body {
     text-align: center;
     color: black;
     padding: 20px;
+}
+
+/* Add a container for the slideshow */
+.slideshow-container {
+    max-width: 1280px;
+    margin: auto;
+    position: relative;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden; /* Hide overflow to prevent stacking */
+}
+
+/* Slideshow images */
+.slideshow-image {
+    width: 100%;
+    height: 100%; /* Match the container height */
+    object-fit: cover; /* Maintain image aspect ratio and cover container */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+    /* Make only the active image visible */
+    .slideshow-image.active {
+        opacity: 1;
+    }
+
+.review {
+    max-width: 1280px;
+    margin: auto;
+    padding: 16px;
+    color: white;
+}
+
+    .review::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .review img {
+        float: left;
+        margin-right: 20px;
+        border-radius: 50%;
+    }
+
+    .review span {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+.segment {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.segment h1 {
+        margin: 5px;
+}
+
+@media (max-width: 1000px) {
+    .review {
+        text-align: center;
+    }
+
+        .review img {
+            margin: auto;
+            float: none;
+            display: block;
+        }
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    float: left;
+    margin-right: 50px;
+}
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+.cardcontainer {
+    padding: 2px 16px;
 }
