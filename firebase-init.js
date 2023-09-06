@@ -41,12 +41,14 @@ const populateTable = async () => {
             // Create cells for Name, Type, and Link
             const nameCell = row.insertCell(0);
             const typeCell = row.insertCell(1);
-            const linkCell = row.insertCell(2);
+            const creatorCell = row.insertCell(2);
+            const linkCell = row.insertCell(3);
 
             // Set the cell values from Firestore data
-            nameCell.textContent = data.name; // Replace "Name" with the actual field name
-            typeCell.textContent = data.type; // Replace "Type" with the actual field name
-            linkCell.innerHTML = `<a href="${data.link}" target="_blank">${data.link}</a>`; // Replace "Link" with the actual field name
+            nameCell.textContent = data.name;
+            typeCell.textContent = data.type;
+            linkCell.innerHTML = `<a href="${data.link}" target="_blank">${data.link}</a>`;
+            creatorCell.textContent = data.creator;
         });
     } catch (error) {
         console.error("Error fetching data:", error);
