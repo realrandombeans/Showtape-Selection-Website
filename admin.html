@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Showtapes - Showtape Selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <p>You are on a restricted admin panel. If you have gained access to this on accident, stop NOW and report this immediately to randombeans or you will face severe consequences.</p>
+        <button id="logoutButton">Logout</button>
+        <h1>Add Showtape</h1>
+        <form id="addShowtapeForm">
+            <label for="docId">Document ID:</label>
+            <input type="text" id="docId" name="docId" required><br><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link" required><br><br>
+
+            <label for="creator">Creator:</label>
+            <input type="text" id="creator" name="creator" required><br><br>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type">
+                <option value="Option 1">RSHW</option>
+                <option value="Option 2">CSHW</option>
+                <option value="Option 3">SSHW</option>
+                <option value="Option 3">NSHW</option>
+                <option value="Option 3">OTHER</option>
+            </select><br><br>
+
+            <button type="submit">Add Showtape</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            // Load the navbar
+            $('#navbar').load('/navbars/navbar.html');
+        });
+    </script>
+    <script type="module" src="/firebase-admin.js"></script>
+</body>
+</html>
