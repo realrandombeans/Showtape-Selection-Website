@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+import { getFirestore, collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -59,14 +59,14 @@ const addShowtapeForm = document.getElementById("addShowtapeForm");
 addShowtapeForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const docId = addShowtapeForm.docId.value; // Get the user-defined document ID
+    const docId = addShowtapeForm.docId.value;
     const name = addShowtapeForm.name.value;
     const link = addShowtapeForm.link.value;
     const creator = addShowtapeForm.creator.value;
     const type = addShowtapeForm.type.value;
 
     try {
-        // Add the Showtape document to Firestore with the user-defined document ID
+        // Add the Showtape document to Firestore
         await setDoc(doc(db, "showtapes", docId), {
             name,
             link,
