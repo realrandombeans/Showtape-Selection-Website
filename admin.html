@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Showtapes - Showtape Selection</title>
+    <title>Admin Panel - Showtape Selection</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/style.css">
@@ -40,6 +40,38 @@
 
             <button type="submit">Add Showtape</button>
         </form>
+
+        <!-- Inside the .container div -->
+        <h1>Add News</h1>
+        <form id="addNewsForm">
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="General">General</option>
+                <option value="Showtape Central News">Showtape Central News</option>
+                <option value="CEC News">CEC News</option>
+                <option value="RAE News">RAE News</option>
+                <option value="Website News">Website News</option>
+                <option value="Important Updates">Important Updates</option>
+                <option value="Showtape Central Status">Showtape Central Status</option>
+                <!-- Add more categories as needed -->
+            </select><br><br>
+
+            <label for="creator">Creator:</label>
+            <select id="creator" name="creator">
+                <option value="randombeans">randombeans</option>
+                <option value="EveningStar92">EveningStar92</option>
+                <!-- Add more creators as needed -->
+            </select><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="8" required></textarea><br><br>
+
+            <!-- Automatically generate the timestamp -->
+            <input type="hidden" id="posted" name="posted" value="">
+
+            <button type="submit">Add News</button>
+        </form>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

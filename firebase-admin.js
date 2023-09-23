@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
-import { getFirestore, collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+import { getFirestore, collection, setDoc, doc, addDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -81,6 +81,38 @@ addShowtapeForm.addEventListener("submit", async (e) => {
         alert("Showtape added successfully!");
     } catch (error) {
         console.error("Error adding Showtape:", error);
+        // Handle errors here (e.g., show an error message)
+    }
+});
+
+const addNewsForm = document.getElementById("addNewsForm");
+
+addNewsForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const category = addNewsForm.category.value;
+    const creator = addNewsForm.creator.value;
+    const description = addNewsForm.description.value;
+
+    try {
+        // Generate the timestamp for when the news is posted
+        const postedTimestamp = new Date();
+
+        // Add the News document to Firestore
+        await addDoc(collection(db, "feed"), {
+            category,
+            creator,
+            description,
+            posted: postedTimestamp, // Set the posted timestamp
+        });
+
+        // Reset the form
+        addNewsForm.reset();
+
+        // You can optionally show a success message to the user
+        alert("News added successfully!");
+    } catch (error) {
+        console.error("Error adding News:", error);
         // Handle errors here (e.g., show an error message)
     }
 });
