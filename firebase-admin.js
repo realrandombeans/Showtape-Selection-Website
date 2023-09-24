@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getFirestore, collection, setDoc, doc, addDoc } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-storage.js"; // Import Storage
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -23,6 +24,8 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 const auth = getAuth();
+const storage = getStorage(app);
+
 
 // Check the user's authentication status
 onAuthStateChanged(auth, (user) => {
@@ -81,7 +84,7 @@ addShowtapeForm.addEventListener("submit", async (e) => {
         alert("Showtape added successfully!");
     } catch (error) {
         console.error("Error adding Showtape:", error);
-        // Handle errors here (e.g., show an error message)
+        alert("Failed to add. Try again later.");
     }
 });
 
@@ -93,17 +96,26 @@ addNewsForm.addEventListener("submit", async (e) => {
     const category = addNewsForm.category.value;
     const creator = addNewsForm.creator.value;
     const description = addNewsForm.description.value;
+    const mediaFile = addNewsForm.media.files[0]; // Get the selected file
 
     try {
         // Generate the timestamp for when the news is posted
         const postedTimestamp = new Date();
 
-        // Add the News document to Firestore
+        // Upload the media file to Firebase Storage
+        const storageRef = ref(storage, `news/${mediaFile.name}`);
+        await uploadBytes(storageRef, mediaFile);
+
+        // Get the URL of the uploaded media file
+        const mediaUrl = await getDownloadURL(storageRef);
+
+        // Add the News document to Firestore with media URL
         await addDoc(collection(db, "feed"), {
             category,
             creator,
             description,
-            posted: postedTimestamp, // Set the posted timestamp
+            mediaUrl, // Store the media URL in Firestore
+            posted: postedTimestamp,
         });
 
         // Reset the form
@@ -113,6 +125,6 @@ addNewsForm.addEventListener("submit", async (e) => {
         alert("News added successfully!");
     } catch (error) {
         console.error("Error adding News:", error);
-        // Handle errors here (e.g., show an error message)
+        alert("Failed to add. Try again later.");
     }
 });

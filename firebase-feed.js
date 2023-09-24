@@ -44,7 +44,8 @@ async function fetchFeedItems() {
                     const descriptionElement = feedItem.querySelector("#description");
                     const categoryElement = feedItem.querySelector("#category");
                     const timeElement = feedItem.querySelector("#time");
-                    const avatarElement = feedItem.querySelector("#avatar"); // Add this line
+                    const avatarElement = feedItem.querySelector("#avatar");
+                    const attachmentContainer = feedItem.querySelector("#attachment-container"); // Add this line
 
                     const data = doc.data();
 
@@ -73,6 +74,23 @@ async function fetchFeedItems() {
 
                     // Set the src attribute of the avatar element while preserving the /media/profiles/ part
                     avatarElement.src = `/media/profiles/${avatarFilename}`;
+
+                    // Check if there's an attachment URL and create the appropriate element
+                    if (data.mediaUrl) {
+                        if (data.mediaUrl.includes(".mp4") || data.mediaUrl.includes(".webm")) {
+                            // If it's a video attachment
+                            const videoElement = document.createElement("video");
+                            videoElement.src = data.mediaUrl;
+                            videoElement.controls = true; // Add video controls
+                            attachmentContainer.appendChild(videoElement);
+                        } else {
+                            // If it's an image attachment
+                            const imgElement = document.createElement("img");
+                            imgElement.src = data.mediaUrl;
+                            imgElement.style.maxWidth = "100%"; // Ensure the image fits within the container
+                            attachmentContainer.appendChild(imgElement);
+                        }
+                    }
 
                     // Append the feed item to the container
                     feedContainer.appendChild(feedItem);
