@@ -90,6 +90,8 @@ addShowtapeForm.addEventListener("submit", async (e) => {
 
 const addNewsForm = document.getElementById("addNewsForm");
 
+const addNewsForm = document.getElementById("addNewsForm");
+
 addNewsForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -102,19 +104,25 @@ addNewsForm.addEventListener("submit", async (e) => {
         // Generate the timestamp for when the news is posted
         const postedTimestamp = new Date();
 
-        // Upload the media file to Firebase Storage
-        const storageRef = ref(storage, `news/${mediaFile.name}`);
-        await uploadBytes(storageRef, mediaFile);
+        // Initialize mediaUrl as null (no media)
+        let mediaUrl = null;
 
-        // Get the URL of the uploaded media file
-        const mediaUrl = await getDownloadURL(storageRef);
+        // Check if a file is selected
+        if (mediaFile) {
+            // Upload the media file to Firebase Storage
+            const storageRef = ref(storage, `news/${mediaFile.name}`);
+            await uploadBytes(storageRef, mediaFile);
 
-        // Add the News document to Firestore with media URL
+            // Get the URL of the uploaded media file
+            mediaUrl = await getDownloadURL(storageRef);
+        }
+
+        // Add the News document to Firestore with media URL (if available)
         await addDoc(collection(db, "feed"), {
             category,
             creator,
             description,
-            mediaUrl, // Store the media URL in Firestore
+            mediaUrl, // Store the media URL in Firestore (null if no media)
             posted: postedTimestamp,
         });
 
