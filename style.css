@@ -311,6 +311,7 @@ body {
     width: 300px;
     float: left;
     margin-right: 50px;
+    margin-bottom: 25px;
 }
 
     .card:hover {
