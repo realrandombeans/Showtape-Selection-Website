@@ -311,6 +311,7 @@ body {
     width: 300px;
     float: left;
     margin-right: 50px;
+    margin-bottom: 25px;
 }
 
     .card:hover {
@@ -320,3 +321,43 @@ body {
 .cardcontainer {
     padding: 2px 16px;
 }
+
+.feeditem {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+input[type=email], [type=password] {
+    border: none;
+    border-bottom: 2px solid #664891;
+    padding: 12px 20px;
+    margin: 8px 0;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    font-family: 'Readex Pro', sans-serif;
+    background-color: #664891;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+    input[type=button]:hover input[type=submit]:hover, input[type=reset]:hover {
+        background-color: #9880ba;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: 0.5s;
+    }

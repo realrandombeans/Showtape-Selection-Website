@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Showtapes - Showtape Selection</title>
+    <title>Admin Panel - Showtape Selection</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/style.css">
@@ -29,15 +29,52 @@
 
             <label for="type">Type:</label>
             <select id="type" name="type">
-                <option value="Option 1">RSHW</option>
-                <option value="Option 2">CSHW</option>
-                <option value="Option 3">SSHW</option>
-                <option value="Option 3">NSHW</option>
-                <option value="Option 3">OTHER</option>
+                <option value="RSHW">RSHW</option>
+                <option value="CSHW">CSHW</option>
+                <option value="SSHW">SSHW</option>
+                <option value="NSHW">NSHW</option>
+                <option value="SHW">SHW</option>
+                <option value="FSHW">FSHW</option>
+                <option value="OTHER">OTHER</option>
             </select><br><br>
 
             <button type="submit">Add Showtape</button>
         </form>
+
+        <!-- Inside the .container div -->
+        <h1>Add News</h1>
+        <form id="addNewsForm">
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="General">General</option>
+                <option value="Showtape Central News">Showtape Central News</option>
+                <option value="CEC News">CEC News</option>
+                <option value="RAE News">RAE News</option>
+                <option value="Website News">Website News</option>
+                <option value="Important Updates">Important Updates</option>
+                <option value="Showtape Central Status">Showtape Central Status</option>
+                <!-- Add more categories as needed -->
+            </select><br><br>
+
+            <label for="creator">Creator:</label>
+            <select id="creator" name="creator">
+                <option value="randombeans">randombeans</option>
+                <option value="EveningStar92">EveningStar92</option>
+                <!-- Add more creators as needed -->
+            </select><br><br>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="8" required></textarea><br><br>
+
+            <!-- Automatically generate the timestamp -->
+            <input type="hidden" id="posted" name="posted" value="">
+
+            <label for="media">Media (Image/Video):</label>
+            <input type="file" id="media" name="media" accept="image/*,video/*"><br><br>
+
+            <button type="submit">Add News</button>
+        </form>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
