@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Stages - Chuck E Cheese</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/style.css">
+	<style>
+
+	</style>
+</head>
+<body>
+	<div id="navbar"></div>
+
+	<div id="cecnavbar"></div>
+
+	<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/backgrounds/cecbackground.png'); height: 300px;">
+		<h1>Store Database</h1>
+		<p>Every single store ever.</p>
+	</div>
+
+	<div class="container">
+		<table>
+			<tr>
+				<th>Location</th>
+				<th>Opened</th>
+				<th>Closed</th>
+				<th>Stages</th>
+				<th>Formerly</th>
+				<th>Country</th>
+			</tr>
+			<tr><td>370 South Winchester Blvd, San Jose, CA</td><td>May 17th 1977</td><td>February 1985</td><td>Portrait Stage</td><td>N/A</td><td>USA</td></tr>
+			<tr><td>1371 Kooser Rd, San Jose, CA</td><td>December 2nd 1978</td><td>June 25th 2020</td><td>Portrait Stage</td><td>Grocery Store</td><td>USA</td></tr>
+		</table>
+		<p>More coming soon!</p>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function () {
+			// Load the navbar
+			$('#cecnavbar').load('/navbars/cecnav.html');
+			$('#navbar').load('/navbars/navbar.html');
+		});
+	</script>
+</body>
+</html>

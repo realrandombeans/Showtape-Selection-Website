@@ -361,3 +361,18 @@ input[type=button], input[type=submit], input[type=reset] {
         cursor: pointer;
         transition: 0.5s;
     }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

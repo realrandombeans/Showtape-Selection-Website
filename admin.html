@@ -11,7 +11,6 @@
 
     <div class="container">
         <h1>Admin Panel</h1>
-        <p>You are on a restricted admin panel. If you have gained access to this on accident, stop NOW and report this immediately to randombeans or you will face severe consequences.</p>
         <button id="logoutButton">Logout</button>
         <h1>Add Showtape</h1>
         <form id="addShowtapeForm">
@@ -74,14 +73,6 @@
 
             <button type="submit">Add News</button>
         </form>
-
-        <h1>Add CEC Edition</h1>
-        <form id="addCECEditionForm">
-            <label for="userID">User ID:</label>
-            <input type="text" id="userID" name="userID" required><br><br>
-
-            <button type="button" id="addCECEditionButton">Add CEC Edition</button>
-        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -91,15 +82,6 @@
             $('#navbar').load('/navbars/navbar.html');
         });
     </script>
-    <script type="module" src="/firebase-admin.js"></script>
-    <script type="module" src="/firebase-cecedition.js"></script>
-    <script type="module">
-        // Import the handleAddCECEdition function from the module
-        import { handleAddCECEdition } from "./firebase-cecedition.js";
-
-        // Add an event listener for the "Add CEC Edition" button
-        const addCECEditionButton = document.getElementById("addCECEditionButton");
-        addCECEditionButton.addEventListener("click", handleAddCECEdition);
-    </script>
+    <script type="module" src="scripts/firebase-admin.js"></script>
 </body>
 </html>
