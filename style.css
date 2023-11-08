@@ -51,10 +51,11 @@ input[type=button], input[type=submit], input[type=reset], button {
 }
 
 .container {
-    width: 1280px;
+    max-width: 1280px;
     margin: auto;
     padding: 25px;
 }
+
 
 /* Header/Blog Title */
 .header {
@@ -223,10 +224,10 @@ input[type=button], input[type=submit], input[type=reset], button {
 
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
+    border-radius: 5px;
     background-color: none;
-    color: #444;
+    color: white;
     cursor: pointer;
-    padding: 25px;
     width: 100%;
     text-align: left;
     outline: none;
@@ -371,4 +372,26 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 200px;
+}
+
+    div.gallery:hover {
+        border: 1px solid #777;
+    }
+
+    div.gallery img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+div.desc {
+    padding: 15px;
+    text-align: center;
 }

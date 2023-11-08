@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hard Luck Bears</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<div id="navbar"></div>
+
+	<div id="hlbnavbar"></div>
+
+	<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/media/backgrounds/hlbbackground.png'); height: 300px;"></div>
+
+	<div class="container">
+		<h1>Welcome to the Hard Luck Bears Archive!</h1>
+		<p>This is an archive dedicated to maintaining information about the "Hard Luck Bears Jamboree" animatronic stages found at Gulliver's Kingdom (Matlock Bath), Gulliver's World (Milton Keynes), and Gulliver's Land (Warrington). <br /><br />To get started, select a section above!</p>
+	</div>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			$(function () {
+				// Load the navbar
+				$('#hlbnavbar').load('/navbars/hlbnav.html');
+				$('#navbar').load('/navbars/navbar.html');
+			});
+		</script>
+
+</body>
+</html>
