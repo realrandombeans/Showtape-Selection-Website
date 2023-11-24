@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Media Archive - Showtape Selection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <h1>Welcome to the Media Archive!</h1>
+        <p>This is a large archive of videos, showtapes, data, and lots more, all served on Youtube. This is a great way to filter through all the content, along with new content being added regularly.</p>
+        <table id="videoTable">
+            <tr>
+                <th>Name</th>
+                <th>Link</th>
+            </tr>
+        </table>
+        <button id="loadMore">Load More</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var nextPageToken = ''; // To store the token for the next page of results
+
+            // Load the navbar
+            $('#navbar').load('/navbars/navbar.html');
+
+            // Function to fetch more videos from YouTube channel
+            function fetchMoreVideos() {
+                $.ajax({
+                    url: 'https://www.googleapis.com/youtube/v3/search',
+                    dataType: 'json',
+                    data: {
+                        part: 'snippet',
+                        channelId: 'UCS5J6tKqwKkM0Q5dhr_8cgQ',
+                        key: 'AIzaSyCPLSfZmnuatdBCxv84Sy3X04EOD41Fzl0', // Replace with your API key
+                        type: 'video',
+                        maxResults: 10,
+                        pageToken: nextPageToken // Pass the next page token
+                    },
+                    success: function (data) {
+                        // Populate the table with additional video data
+                        $.each(data.items, function (index, item) {
+                            $('#videoTable').append('<tr><td>' + item.snippet.title + '</td><td><a href="https://www.youtube.com/watch?v=' + item.id.videoId + '" target="_blank">Watch</a></td></tr>');
+                        });
+
+                        // Update the next page token
+                        nextPageToken = data.nextPageToken;
+                    }
+                });
+            }
+
+            // Initial fetch
+            fetchMoreVideos();
+
+            // Load more button click event
+            $('#loadMore').click(function () {
+                fetchMoreVideos();
+            });
+        });
+    </script>
+
+</body>
+</html>
