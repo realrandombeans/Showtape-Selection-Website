@@ -31,24 +31,35 @@
             // Function to fetch more videos from YouTube channel
             function fetchMoreVideos() {
                 $.ajax({
-                    url: 'https://www.googleapis.com/youtube/v3/search',
+                    url: 'https://www.googleapis.com/youtube/v3/playlistItems',
                     dataType: 'json',
                     data: {
-                        part: 'snippet',
-                        channelId: 'UCS5J6tKqwKkM0Q5dhr_8cgQ',
-                        key: 'AIzaSyCPLSfZmnuatdBCxv84Sy3X04EOD41Fzl0', // Replace with your API key
-                        type: 'video',
+                        part: 'snippet,contentDetails',
                         maxResults: 10,
-                        pageToken: nextPageToken // Pass the next page token
+                        playlistId: 'UULFS5J6tKqwKkM0Q5dhr_8cgQ', // Replace with your playlist ID
+                        key: 'AIzaSyCPLSfZmnuatdBCxv84Sy3X04EOD41Fzl0', // Replace with your API key
+                        pageToken: nextPageToken, // Pass the nextPageToken
                     },
                     success: function (data) {
-                        // Populate the table with additional video data
-                        $.each(data.items, function (index, item) {
-                            $('#videoTable').append('<tr><td>' + item.snippet.title + '</td><td><a href="https://www.youtube.com/watch?v=' + item.id.videoId + '" target="_blank">Watch</a></td></tr>');
-                        });
+                        // Check if there are new items
+                        if (data.items.length > 0) {
+                            // Populate the table with additional video data
+                            $.each(data.items, function (index, item) {
+                                $('#videoTable').append('<tr><td>' + item.snippet.title + '</td><td><a href="https://www.youtube.com/watch?v=' + item.snippet.resourceId.videoId + '" target="_blank">Watch</a></td></tr>');
+                            });
 
-                        // Update the next page token
-                        nextPageToken = data.nextPageToken;
+                            // Update the next page token
+                            nextPageToken = data.nextPageToken;
+
+                            // Check if there are more items in the playlist
+                            if (data.items.length <= $('#videoTable tr').length) {
+                                // If no more items, hide the 'Load More' button
+                                $('#loadMore').hide();
+                            }
+                        } else {
+                            // If no new items, hide the 'Load More' button
+                            $('#loadMore').hide();
+                        }
                     }
                 });
             }
@@ -61,6 +72,7 @@
                 fetchMoreVideos();
             });
         });
+
     </script>
 
 </body>
